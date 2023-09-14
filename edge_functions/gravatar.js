@@ -12,7 +12,7 @@ export default async function (request) {
                 method: "GET",
             });
             const resp = new Response(
-                res.arrayBuffer(),
+                await res.arrayBuffer(),
                 {
                     status: 200,
                 }
