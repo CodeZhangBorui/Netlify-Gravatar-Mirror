@@ -12,7 +12,7 @@ export default async function (request) {
                 method: "GET",
             });
             const resp = new Response(
-                res,
+                res.blob(),
                 {
                     status: 200,
                 }
