@@ -7,12 +7,12 @@ export default async function (request) {
     if (request.method === "GET") {
         try {
             const url = await request.url;
-            console.log("Request URL: ", url, ", proxied to: " + url.split("/avatar/")[1]);
+            console.log("Request URL: ", url, ", proxied to: https://gravatar.com/avatar/" + url.split("/avatar/")[1]);
             const res = await fetch("https://gravatar.com/avatar/" + url.split("/avatar/")[1], {
                 method: "GET",
             });
             const resp = new Response(
-                res.blob(),
+                res.arrayBuffer(),
                 {
                     status: 200,
                 }
